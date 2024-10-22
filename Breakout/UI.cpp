@@ -22,6 +22,10 @@ UI::UI(sf::RenderWindow* window, int lives, GameManager* gameManager)
 	_powerupText.setFillColor(sf::Color::Cyan);
 	_font.loadFromFile("font/montS.ttf");
 	_powerupText.setFont(_font);
+
+	//Setup view
+	_view.setSize(window->getSize().x, window->getSize().y);
+	_view.setCenter(window->getSize().x / 2, window->getSize().y / 2);
 }
 
 UI::~UI()
@@ -70,6 +74,12 @@ void UI::updatePowerupText(std::pair<POWERUPS, float> powerup)
 void UI::lifeLost(int lives)
 {
 	_lives[_lives.size() - 1 - lives].setFillColor(sf::Color::Transparent);
+}
+
+void UI::screenShake()
+{
+	_view.rotate(180);
+	_window->setView(_view);
 }
 
 void UI::render()

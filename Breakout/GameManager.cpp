@@ -13,6 +13,10 @@ GameManager::GameManager(sf::RenderWindow* window)
     _masterText.setPosition(50, 400);
     _masterText.setCharacterSize(48);
     _masterText.setFillColor(sf::Color::Yellow);
+
+    //Setting view for screen shake
+   
+    _window->setView(_view);
 }
 
 void GameManager::initialize()
@@ -92,6 +96,7 @@ void GameManager::loseLife()
     _ui->lifeLost(_lives);
 
     // TODO screen shake.
+    _ui->screenShake();
 }
 
 void GameManager::render()

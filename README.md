@@ -36,3 +36,9 @@ fire ball (green)
 
 21/10/2024
 21:19 Fixed circular dependancy i think.
+
+22/10/20204
+17:08 Implemented simple mouse input where paddle moves right if mouse is on right segment of screen and vice versa
+17:11 Implemented improved mouse input where paddle moves towards mouse depending on its location compared to itself.
+17:39 Working on screen shake still
+17:45 Screen flips when hit, starting on real screen shake now. 

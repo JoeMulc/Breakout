@@ -15,12 +15,14 @@ public:
 
 	void updatePowerupText(std::pair<POWERUPS, float>);
 	void lifeLost(int lives);
+	void screenShake();
 	void render();
 
 private:
 	GameManager* _gameManager;
 	
 	sf::RenderWindow* _window;
+	sf::View _view;
 	sf::Font _font;
 	sf::Text _powerupText;
 

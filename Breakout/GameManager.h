@@ -40,6 +40,7 @@ private:
     sf::Text _masterText;
 
     sf::RenderWindow* _window;
+    sf::View _view;
     Paddle* _paddle;
     Ball* _ball;
     BrickManager* _brickManager;
