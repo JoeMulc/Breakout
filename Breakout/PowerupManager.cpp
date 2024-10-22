@@ -67,16 +67,16 @@ void PowerupManager::spawnPowerup(UI *_ui)
         _powerups.push_back(new PowerupFastBall(_window, _paddle, _ball));
         break;
     case 2:
-        _powerups.push_back(new PowerupCameraFlip(_window, _paddle, _ball));
+        _powerups.push_back(new PowerupFastBall(_window, _paddle, _ball));
         break;
     case 3:
-        _powerups.push_back(new PowerupCameraFlip(_window, _paddle, _ball));
+        _powerups.push_back(new PowerupFireBall(_window, _paddle, _ball));
         break;
     case 4:
-        _powerups.push_back(new PowerupCameraFlip(_window, _paddle, _ball));
+        _powerups.push_back(new PowerupSlowBall(_window, _paddle, _ball));
         break;
     case 5:
-        _powerups.push_back(new PowerupCameraFlip(_window, _paddle, _ball));
+        _powerups.push_back(new PowerupSmallPaddle(_window, _paddle, _ball));
        break;
     case 6:
        break;
