@@ -14,7 +14,7 @@ Ball::~Ball()
 {
 }
 
-void Ball::update(float dt)
+void Ball::update(float dt, UI *_ui)
 {
     // check for powerup, tick down or correct
     if (_timeWithPowerupEffect > 0.f)

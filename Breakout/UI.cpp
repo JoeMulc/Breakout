@@ -79,6 +79,7 @@ void UI::lifeLost(int lives)
 
 void UI::screenShake(float intensity, float duration)
 {
+	//sets screen shake variables
 	bShouldShake = true;
 	_clock.restart();
 	_intensity = intensity;
@@ -89,19 +90,25 @@ void UI::screenShake(float intensity, float duration)
 
 void UI::update(float dt)
 {
+	//If screen should be shaken
 	if (bShouldShake)
 	{
+		//if screen shakes duration has not elapsed
 		if (_clock.getElapsedTime().asSeconds() <= _duration)
 		{
+			//Offset screen scaled by intensity
 			float offsetX = (rand() % 100 + (-50)) * _intensity;
 			float offsetY = (rand() % 100 + (-50)) * _intensity;
 			_view.setCenter(_window->getSize().x / 2 + offsetX, _window->getSize().y / 2 + offsetY);
 		}
 		else
 		{
+			//reset values
 			bShouldShake = false;
 			_view = _defaultView;
 		}
+
+		//set windows view
 		_window->setView(_view);
 	}
 }

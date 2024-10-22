@@ -14,9 +14,6 @@ GameManager::GameManager(sf::RenderWindow* window)
     _masterText.setCharacterSize(48);
     _masterText.setFillColor(sf::Color::Yellow);
 
-    //Setting view for screen shake
-   
-    _window->setView(_view);
 }
 
 void GameManager::initialize()
@@ -86,7 +83,7 @@ void GameManager::update(float dt)
 
     // update everything 
     _paddle->update(dt);
-    _ball->update(dt);
+    _ball->update(dt, _ui);
     _ui->update(dt);
     _powerupManager->update(dt);
 }

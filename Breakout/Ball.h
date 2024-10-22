@@ -10,7 +10,7 @@ class Ball {
 public:
     Ball(sf::RenderWindow* window, float velocity, GameManager* gameManager);
     ~Ball();
-    void update(float dt);
+    void update(float dt, class UI* _ui);
     void render();
     void setVelocity(float coeff, float duration);
     void setFireBall(float duration);

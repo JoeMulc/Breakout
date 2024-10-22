@@ -45,3 +45,5 @@ fire ball (green)
 17:56 bug found in mouse movement.
 18:05 Mouse bug fixed where mouse was affecting movement when not intended. Mouse movement still could be refined but moving back to screen shake.
 18:20 basic screen shake added
+18:30 screenshake function completed
+18:53 bug fixes - forward declaration in ball cpp and initial view fixed
