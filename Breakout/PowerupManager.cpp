@@ -54,17 +54,17 @@ void PowerupManager::render()
     }
 }
 
-void PowerupManager::spawnPowerup()
+void PowerupManager::spawnPowerup(UI *_ui)
 {
 
     // TODO finish this.
     switch (rand() % 6)
     {
     case 0:
-        _powerups.push_back(new PowerupCameraFlip(_window, _paddle, _ball));
+        _powerups.push_back(new PowerupBigPaddle(_window, _paddle, _ball));
         break;
     case 1:
-        _powerups.push_back(new PowerupCameraFlip(_window, _paddle, _ball));
+        _powerups.push_back(new PowerupFastBall(_window, _paddle, _ball));
         break;
     case 2:
         _powerups.push_back(new PowerupCameraFlip(_window, _paddle, _ball));

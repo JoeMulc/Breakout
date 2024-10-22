@@ -13,5 +13,6 @@ PowerupCameraFlip::~PowerupCameraFlip()
 
 std::pair<POWERUPS, float> PowerupCameraFlip::applyEffect() 
 {
+
 	return { flipCam, 5.0f };
 }

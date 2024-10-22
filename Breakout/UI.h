@@ -16,6 +16,7 @@ public:
 	void updatePowerupText(std::pair<POWERUPS, float>);
 	void lifeLost(int lives);
 	void screenShake(float intensity, float duration);
+	void flipCamera();
 	void update(float dt);
 	void render();
 

@@ -49,3 +49,4 @@ fire ball (green)
 18:53 bug fixes - forward declaration in ball cpp and initial view fixed
 19:00 screenshake added to more ball collisions
 19:02 looking over powerup implementation, plan to add more powerups
+19:22 camera flip class added - functionality needs to be added

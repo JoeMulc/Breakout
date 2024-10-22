@@ -88,6 +88,12 @@ void UI::screenShake(float intensity, float duration)
 
 }
 
+void UI::flipCamera()
+{
+	_view.rotate(180);
+	_window->setView(_view);
+}
+
 void UI::update(float dt)
 {
 	//If screen should be shaken

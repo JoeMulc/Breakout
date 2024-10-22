@@ -12,6 +12,7 @@
 #include "PowerupCameraFlip.h"
 #include "Paddle.h"
 #include "Ball.h"
+#include "UI.h"
 
 
 class PowerupManager
@@ -22,7 +23,7 @@ public:
 
     void update(float dt);
     void render();
-    void spawnPowerup(); // Method to spawn a power-up
+    void spawnPowerup(UI* _ui); // Method to spawn a power-up
     void checkCollision(); // Check collision with paddle
     int getPowerupsSpawned();
     std::pair<POWERUPS, float> getPowerupInEffect();
