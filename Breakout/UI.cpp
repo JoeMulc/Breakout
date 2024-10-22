@@ -26,6 +26,7 @@ UI::UI(sf::RenderWindow* window, int lives, GameManager* gameManager)
 	//Setup view
 	_view.setSize(window->getSize().x, window->getSize().y);
 	_view.setCenter(window->getSize().x / 2, window->getSize().y / 2);
+	_defaultView = _view;
 }
 
 UI::~UI()
@@ -78,8 +79,14 @@ void UI::lifeLost(int lives)
 
 void UI::screenShake()
 {
-	_view.rotate(180);
-	_window->setView(_view);
+
+	//float offsetX = (std::rand() % 200 - 100) * 0.2; // Random value between -100 and 100 scaled by intensity
+	//float offsetY = (std::rand() % 200 - 100) * 0.2; // Random value between -100 and 100 scaled by intensity
+	//
+	//_view.setCenter(_window->getSize().x / 2 + offsetX, _window->getSize().y / 2 + offsetY);
+	//
+	//
+	//_window->setView(_view);
 }
 
 void UI::render()

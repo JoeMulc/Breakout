@@ -23,6 +23,7 @@ private:
 	
 	sf::RenderWindow* _window;
 	sf::View _view;
+	sf::View _defaultView;
 	sf::Font _font;
 	sf::Text _powerupText;
 

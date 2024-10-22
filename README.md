@@ -42,3 +42,4 @@ fire ball (green)
 17:11 Implemented improved mouse input where paddle moves towards mouse depending on its location compared to itself.
 17:39 Working on screen shake still
 17:45 Screen flips when hit, starting on real screen shake now. 
+17:56 bug found in mouse movement.
