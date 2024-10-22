@@ -87,6 +87,7 @@ void GameManager::update(float dt)
     // update everything 
     _paddle->update(dt);
     _ball->update(dt);
+    _ui->update(dt);
     _powerupManager->update(dt);
 }
 
@@ -96,7 +97,7 @@ void GameManager::loseLife()
     _ui->lifeLost(_lives);
 
     // TODO screen shake.
-    _ui->screenShake();
+    _ui->screenShake(10, 0.5);
 }
 
 void GameManager::render()

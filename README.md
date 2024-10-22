@@ -43,3 +43,4 @@ fire ball (green)
 17:39 Working on screen shake still
 17:45 Screen flips when hit, starting on real screen shake now. 
 17:56 bug found in mouse movement.
+18:05 Mouse bug fixed where mouse was affecting movement when not intended. Mouse movement still could be refined but moving back to screen shake.

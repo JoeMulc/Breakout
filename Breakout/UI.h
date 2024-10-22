@@ -15,7 +15,8 @@ public:
 
 	void updatePowerupText(std::pair<POWERUPS, float>);
 	void lifeLost(int lives);
-	void screenShake();
+	void screenShake(float intensity, float duration);
+	void update(float dt);
 	void render();
 
 private:
@@ -31,5 +32,11 @@ private:
 
 	static constexpr float LIFE_RADIUS = 15.0f;
 	static constexpr float LIFE_PADDING = 20.0f;
+
+	//screen shake variables
+	bool bShouldShake = false;
+	float _intensity;
+	float _duration;
+	sf::Clock _clock;
 };
 

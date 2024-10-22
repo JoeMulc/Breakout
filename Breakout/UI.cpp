@@ -77,16 +77,30 @@ void UI::lifeLost(int lives)
 	_lives[_lives.size() - 1 - lives].setFillColor(sf::Color::Transparent);
 }
 
-void UI::screenShake()
+void UI::screenShake(float intensity, float duration)
 {
+	bShouldShake = true;
+	_clock.restart();
+	_intensity = intensity;
+	_duration = duration;
 
-	//float offsetX = (std::rand() % 200 - 100) * 0.2; // Random value between -100 and 100 scaled by intensity
-	//float offsetY = (std::rand() % 200 - 100) * 0.2; // Random value between -100 and 100 scaled by intensity
-	//
-	//_view.setCenter(_window->getSize().x / 2 + offsetX, _window->getSize().y / 2 + offsetY);
-	//
-	//
-	//_window->setView(_view);
+
+}
+
+void UI::update(float dt)
+{
+	if (bShouldShake)
+	{
+		if (_clock.getElapsedTime().asSeconds() <= _duration)
+		{
+			_view.rotate(10);
+		}
+		else
+		{
+			bShouldShake = false;
+		}
+		_window->setView(_view);
+	}
 }
 
 void UI::render()
