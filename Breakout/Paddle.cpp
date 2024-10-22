@@ -1,5 +1,6 @@
 #include "Paddle.h"
 #include <iostream>
+#include <SFML/Window/Mouse.hpp>
 
 Paddle::Paddle(sf::RenderWindow* window)
     : _window(window), _width(PADDLE_WIDTH), _timeInNewSize(0.0f), _isAlive(true)
@@ -13,11 +14,12 @@ Paddle::~Paddle()
 {
 }
 
+
 void Paddle::moveLeft(float dt)
 {
     float position = _sprite.getPosition().x;
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && position > 0)
+    if ((sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Mouse::getPosition(*_window).x < WINDOW_WIDTH / 2) && position > 0)
     {
         _sprite.move(sf::Vector2f(-dt * PADDLE_SPEED, 0));
     }
@@ -27,7 +29,7 @@ void Paddle::moveRight(float dt)
 {
     float position = _sprite.getPosition().x;
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && position < _window->getSize().x - _width)
+    if ((sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Mouse::getPosition(*_window).x > WINDOW_WIDTH / 2) && position < _window->getSize().x - _width)
     {
         _sprite.move(sf::Vector2f(dt * PADDLE_SPEED, 0));
     }
@@ -43,6 +45,12 @@ void Paddle::update(float dt)
     {
         setWidth(1.0f, 0.0f); // Reset to default width after duration
     }
+}
+
+void Paddle::handleInput(float dt)
+{
+    moveRight(dt);
+    moveLeft(dt);
 }
 
 void Paddle::render()
