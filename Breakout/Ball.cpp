@@ -50,12 +50,14 @@ void Ball::update(float dt, UI *_ui)
     // bounce on walls
     if ((position.x >= windowDimensions.x - 2 * RADIUS && _direction.x > 0) || (position.x <= 0 && _direction.x < 0))
     {
+        _ui->screenShake(0.05, 0.1);
         _direction.x *= -1;
     }
 
     // bounce on ceiling
     if (position.y <= 0 && _direction.y < 0)
     {
+        _ui->screenShake(0.05, 0.1);
         _direction.y *= -1;
     }
 
@@ -70,6 +72,8 @@ void Ball::update(float dt, UI *_ui)
     // collision with paddle
     if (_sprite.getGlobalBounds().intersects(_gameManager->getPaddle()->getBounds()))
     {
+        _ui->screenShake(0.05, 0.1);
+
         _direction.y *= -1; // Bounce vertically
 
         float paddlePositionProportion = (_sprite.getPosition().x - _gameManager->getPaddle()->getBounds().left) / _gameManager->getPaddle()->getBounds().width;
@@ -84,10 +88,12 @@ void Ball::update(float dt, UI *_ui)
     if (_isFireBall) return; // no collisisons when in fireBall mode.
     if (collisionResponse == 1)
     {
+        _ui->screenShake(0.05, 0.1);
         _direction.x *= -1; // Bounce horizontally
     }
     else if (collisionResponse == 2)
     {
+        _ui->screenShake(0.05, 0.1);
         _direction.y *= -1; // Bounce vertically
     }
 }
