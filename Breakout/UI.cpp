@@ -93,11 +93,14 @@ void UI::update(float dt)
 	{
 		if (_clock.getElapsedTime().asSeconds() <= _duration)
 		{
-			_view.rotate(10);
+			float offsetX = (rand() % 100 + (-50)) * _intensity;
+			float offsetY = (rand() % 100 + (-50)) * _intensity;
+			_view.setCenter(_window->getSize().x / 2 + offsetX, _window->getSize().y / 2 + offsetY);
 		}
 		else
 		{
 			bShouldShake = false;
+			_view = _defaultView;
 		}
 		_window->setView(_view);
 	}

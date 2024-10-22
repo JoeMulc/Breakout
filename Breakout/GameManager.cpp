@@ -97,7 +97,7 @@ void GameManager::loseLife()
     _ui->lifeLost(_lives);
 
     // TODO screen shake.
-    _ui->screenShake(10, 0.5);
+    _ui->screenShake(0.2, 0.5);
 }
 
 void GameManager::render()
