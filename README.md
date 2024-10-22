@@ -47,3 +47,5 @@ fire ball (green)
 18:20 basic screen shake added
 18:30 screenshake function completed
 18:53 bug fixes - forward declaration in ball cpp and initial view fixed
+19:00 screenshake added to more ball collisions
+19:02 looking over powerup implementation, plan to add more powerups
